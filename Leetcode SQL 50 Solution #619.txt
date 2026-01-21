@@ -1,0 +1,10 @@
+Leetcode SQL 50 Solution #619 Biggest Single Number
+Link: https://leetcode.com/problems/biggest-single-number/?envType=study-plan-v2&envId=top-sql-50
+/* Write your T-SQL query statement below */
+    
+SELECT max(num) as num
+FROM MyNumbers
+where num in
+(select num from mynumbers
+group by num
+having count(num)=1)
