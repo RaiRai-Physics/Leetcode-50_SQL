@@ -1,0 +1,15 @@
+Leetcode SQL-50: #1204. Last Person to Fit in the Bus
+Question Link: https://leetcode.com/problems/last-person-to-fit-in-the-bus/?envType=study-plan-v2&envId=top-sql-50
+
+# Write your MySQL query statement below
+select person_name
+from (
+select
+person_name,
+turn,
+sum(weight) OVER (orer by turn) as total_weight
+from Queue
+) t
+where total_weight <= 1000
+order by turn DESC
+limit 1;
