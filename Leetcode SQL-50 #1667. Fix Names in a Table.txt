@@ -1,0 +1,12 @@
+Leetcode SQL-50: #1667. Fix Names in a Table
+
+Question Link: https://leetcode.com/problems/fix-names-in-a-table/?envType=study-plan-v2&envId=top-sql-50
+
+# Write your MySQL query statement below
+SELECT 
+user_id,
+CONCAT(UPPER(LEFT(name, 1)), LOWER(SUBSTRING(name, 2))) AS name
+FROM 
+users
+ORDER BY 
+user_id ASC;
