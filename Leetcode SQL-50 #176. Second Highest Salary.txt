@@ -1,0 +1,12 @@
+Leetcode SQL-50: #176. Second Highest Salary
+
+Question Link: https://leetcode.com/problems/second-highest-salary/description/?envType=study-plan-v2&envId=top-sql-50
+
+# Write your MySQL query statement below
+SELECT
+MAX(salary) AS SecondHighestSalary
+FROM Employee
+WHERE salary < (
+SELECT MAX(salary)
+FROM Employee
+);
